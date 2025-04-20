@@ -9,7 +9,7 @@ import Link from "next/link"
 export default function Home() {
 	return (
 		<>
-			<main className="grid grid-cols-1 gap-3 w-[375px] p-4 pt-8 content-start">
+			<main className="grid grid-cols-1 gap-3 w-[375px] p-4 pt-4 content-start">
 				<div className="px-2">
 					<Image src="/images/logo.png" width={10200} height={2813} alt="logo" />
 				</div>
@@ -30,13 +30,40 @@ export default function Home() {
 								month={"may"}
 								day={24}
 								time={"7:00 pm"}
+							/>
+							<Show
+								venueName={"society"}
+								city={"kansas city"}
+								state={"mo"}
+								dayName={"sat"}
+								month={"may"}
+								day={24}
+								time={"7:00 pm"}
+							/>
+							<Show
+								venueName={"society"}
+								city={"kansas city"}
+								state={"mo"}
+								dayName={"sat"}
+								month={"may"}
+								day={24}
+								time={"7:00 pm"}
+							/>
+							<Show
+								venueName={"society"}
+								city={"kansas city"}
+								state={"mo"}
+								dayName={"sat"}
+								month={"may"}
+								day={24}
+								time={"7:00 pm"}
 								last
 							/>
 						</Shows>
 					</div>
 				</div>
 				<div className="px-1 w-full">
-					<div className="box bg-[#FF4B2B] text-center text-xl text-[#F0EAD6] p-3 w-full">
+					<div className="box bg-[#FF4B2B] text-center text-md text-[#F0EAD6] p-1 w-full">
 						<span>booking:</span>
 						<br />
 						<Link href="mailto:relaxdeanmusic@gmail.com">relaxdeanmusic@gmail.com</Link>

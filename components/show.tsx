@@ -26,7 +26,7 @@ export default function Show({ venueName, city, state, dayName, month, day, time
 				<div>{`${venueName} @ ${time}`}</div>
 				<div className="text-md">{`${city}, ${state}`}</div>
 			</div>
-			{!last && <hr className="mr-2" />}
+			{!last && <hr className="mr-2 border-t border-dashed" />}
 		</div>
 	)
 }

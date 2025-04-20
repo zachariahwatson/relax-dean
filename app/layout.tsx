@@ -20,7 +20,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" className="h-full w-full min-w-[375px]">
-			<body className={`${deanDisplay.variable} antialiased h-full grid justify-center content-start pb-8`}>
+			<body className={`${deanDisplay.variable} antialiased h-full grid justify-center content-start pb-4`}>
 				{children}
 			</body>
 		</html>
