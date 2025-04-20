@@ -30,7 +30,7 @@ services:
       - ./certbot/www:/var/www/certbot
     depends_on:
       - nginx
-    command: certonly --webroot -w /var/www/certbot --keep-until-expiring --email relaxdeanmusic@gmail.com --agree-tos --no-eff-email -d relaxdean.com -d www.relaxdean.com
+    command: certonly --webroot -w /var/www/certbot --keep-until-expiring --email relaxdeanmusic@gmail.com --agree-tos --no-eff-email -d relaxdean.com
 
 networks:
   relax-dean:
