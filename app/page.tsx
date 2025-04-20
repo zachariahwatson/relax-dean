@@ -1,7 +1,6 @@
 import Show from "@/components/show"
 import Shows from "@/components/shows"
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons"
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import Image from "next/image"
 import Link from "next/link"
@@ -11,7 +10,7 @@ export default function Home() {
 		<>
 			<main className="grid grid-cols-1 gap-3 w-[375px] p-4 pt-4 content-start">
 				<div className="px-2">
-					<Image src="/images/logo.png" width={10200} height={2813} alt="logo" />
+					<Image src="/images/logo.png" width={1000} height={275} alt="logo" priority={true} loading={"eager"} />
 				</div>
 				<div className="flex justify-center items-center font-[family-name:var(--font-dean-display)] text-4xl text-[#F0EAD6] relative h-[82.55px]">
 					*the rock* out soon!
