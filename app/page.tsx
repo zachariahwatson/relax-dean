@@ -30,33 +30,6 @@ export default function Home() {
 								month={"may"}
 								day={24}
 								time={"7:00 pm"}
-							/>
-							<Show
-								venueName={"society"}
-								city={"kansas city"}
-								state={"mo"}
-								dayName={"sat"}
-								month={"may"}
-								day={24}
-								time={"7:00 pm"}
-							/>
-							<Show
-								venueName={"society"}
-								city={"kansas city"}
-								state={"mo"}
-								dayName={"sat"}
-								month={"may"}
-								day={24}
-								time={"7:00 pm"}
-							/>
-							<Show
-								venueName={"society"}
-								city={"kansas city"}
-								state={"mo"}
-								dayName={"sat"}
-								month={"may"}
-								day={24}
-								time={"7:00 pm"}
 								last
 							/>
 						</Shows>
