@@ -11,6 +11,24 @@ const deanDisplay = localFont({
 export const metadata: Metadata = {
 	title: "Relax Dean",
 	description: "bodaciously bittersweet ballads",
+	keywords: [
+		"music",
+		"artist",
+		"lofi",
+		"lo-fi",
+		"spotify",
+		"apple music",
+		"producer",
+		"performer",
+		"songs",
+		"songwriter",
+		"singer",
+		"drummer",
+		"singer songwriter",
+		"singer-songwriter",
+		"relax dean",
+		"relax dean band",
+	],
 }
 
 export default function RootLayout({
