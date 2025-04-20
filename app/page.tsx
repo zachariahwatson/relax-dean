@@ -1,3 +1,6 @@
+"use client"
+
+import Background from "@/components/background"
 import Show from "@/components/show"
 import Shows from "@/components/shows"
 import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons"
@@ -8,6 +11,7 @@ import Link from "next/link"
 export default function Home() {
 	return (
 		<>
+			<Background />
 			<main className="grid grid-cols-1 gap-3 w-[375px] p-4 pt-4 content-start">
 				<div className="px-2">
 					<Image src="/images/logo.png" width={1000} height={275} alt="logo" priority={true} loading={"eager"} />
