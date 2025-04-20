@@ -2,13 +2,36 @@ services:
   nextjs:
     build: .
     container_name: relax-dean-nextjs
+    restart: unless-stopped
+    networks:
+      - relax-dean
 
   nginx:
-    image: nginx:alpine
+    image: nginx:mainline-alpine
     container_name: relax-dean-nginx
+    restart: unless-stopped
     ports:
       - "80:80"
+      - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
     depends_on:
       - nextjs
+    networks:
+      - relax-dean
+
+  certbot:
+    image: certbot/certbot
+    container_name: relax-dean-certbot
+    volumes:
+      - ./certbot/conf:/etc/letsencrypt
+      - ./certbot/www:/var/www/certbot
+    depends_on:
+      - nginx
+    command: certonly --webroot -w /var/www/certbot --keep-until-expiring --email relaxdeanmusic@gmail.com --agree-tos --no-eff-email -d relaxdean.com -d www.relaxdean.com
+
+networks:
+  relax-dean:
+    driver: bridge
