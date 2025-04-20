@@ -1,103 +1,60 @@
-import Image from "next/image";
+import Show from "@/components/show"
+import Shows from "@/components/shows"
+import { faInstagram, faTiktok } from "@fortawesome/free-brands-svg-icons"
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Image from "next/image"
+import Link from "next/link"
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+	return (
+		<>
+			<main className="grid grid-cols-1 gap-3 w-[375px] p-4 pt-8 content-start">
+				<div className="px-2">
+					<Image src="/images/logo.png" width={10200} height={2813} alt="logo" />
+				</div>
+				<div className="flex justify-center items-center font-[family-name:var(--font-dean-display)] text-4xl text-[#F0EAD6] relative h-[82.55px]">
+					*the rock* out soon!
+					<svg className="absolute fill-[#FFC74A] -z-10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 332.62 78">
+						<polygon points="301.31 78 294.2 64 287.09 78 279.98 64 272.87 78 265.76 64 258.65 78 251.54 64 244.43 78 237.33 64 230.22 78 223.11 64 216.01 78 208.9 64 201.79 78 194.68 64 187.57 78 180.46 64 173.35 78 166.24 64 159.13 78 152.02 64 144.91 78 137.79 64 130.68 78 123.57 64 116.46 78 109.34 64 102.23 78 95.12 64 88.01 78 80.89 64 73.78 78 66.67 64 59.55 78 52.43 64 45.31 78 39.74 63.52 29.57 75.24 29.31 59.72 15.74 67.24 20.79 52.57 5.47 55.01 15.23 42.95 0 39.98 13.31 32 .87 22.11 16.74 21.42 12.49 6.11 25.74 14.88 31.31 0 38.42 14 45.53 0 52.64 14 59.75 0 66.86 14 73.97 0 81.08 14 88.18 0 95.29 14 102.4 0 109.51 14 116.61 0 123.72 14 130.83 0 137.94 14 145.05 0 152.16 14 159.27 0 166.38 14 173.49 0 180.6 14 187.71 0 194.82 14 201.94 0 209.05 14 216.16 0 223.28 14 230.39 0 237.5 14 244.61 0 251.72 14 258.84 0 265.95 14 273.07 0 280.19 14 287.31 0 292.88 14.48 303.05 2.76 303.31 18.28 316.88 10.76 311.83 25.43 327.15 22.99 317.39 35.05 332.62 38.02 319.31 46 331.75 55.89 315.88 56.58 320.12 71.89 306.87 63.12 301.31 78" />
+					</svg>
+				</div>
+				<div className="px-1 w-full">
+					<div className="stamp bg-[#45CBBE] text-2xl text-[#F0EAD6] p-3 w-full">
+						<Shows>
+							<Show
+								venueName={"society"}
+								city={"kansas city"}
+								state={"mo"}
+								dayName={"sat"}
+								month={"may"}
+								day={24}
+								time={"7:00 pm"}
+								last
+							/>
+						</Shows>
+					</div>
+				</div>
+				<div className="px-1 w-full">
+					<div className="box bg-[#FF4B2B] text-center text-xl text-[#F0EAD6] p-3 w-full">
+						<span>booking:</span>
+						<br />
+						<Link href="mailto:relaxdeanmusic@gmail.com">relaxdeanmusic@gmail.com</Link>
+					</div>
+				</div>
+			</main>
+			<footer className="flex flex-col space-y-4">
+				<div className="px-4 grid grid-rows-1 grid-flow-col gap-4 h-10 justify-items-center">
+					<Link href="https://www.instagram.com/yorelaxdean" target="_blank">
+						<FontAwesomeIcon icon={faInstagram} color="#FFC74A" className="size-10" />
+					</Link>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+					<Link href="https://www.tiktok.com/@relaxdeanmusic" target="_blank">
+						<FontAwesomeIcon icon={faTiktok} color="#FFC74A" className="size-10" />
+					</Link>
+				</div>
+				<span className="text-center text-xs">© 2025 Relax Dean</span>
+			</footer>
+		</>
+	)
 }
