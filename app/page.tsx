@@ -59,7 +59,7 @@ export default function Home() {
 								dayName={"sat"}
 								month={"may"}
 								day={24}
-								time={"7:00 pm"}
+								time={"8:00 pm"}
 							/>
 							<Show
 								venueName={"me mum's house"}
