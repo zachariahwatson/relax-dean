@@ -53,8 +53,8 @@ float fbm( vec2 p )
     float f = 0.0;
 
     f += 0.500000*noise( p + iTime  ); p = mtx*p*2.02;
-    f += 0.031250*noise( p ); p = mtx*p*2.01;
-    f += 0.250000*noise( p ); p = mtx*p*2.03;
+    f += 0.031250*noise( p-iTime ); p = mtx*p*2.01;
+    f += 0.250000*noise( p  ); p = mtx*p*2.03;
     f += 0.125000*noise( p ); p = mtx*p*2.01;
     f += 0.062500*noise( p ); p = mtx*p*2.04;
     f += 0.015625*noise( p + sin(iTime) );
@@ -69,11 +69,11 @@ float pattern( in vec2 p )
 
 void main()
 {
-    float tileCount = 35.;
+    float tileCount = 50.;
     vec2 uv = vUv*iResolution.xy/500.;
     vec2 mosaic = floor(uv*tileCount)/tileCount;
-    float size = min(max(smoothstep(.45,.5,pattern(mosaic)),0.),1.)/3.;
-	float alpha = 1.-smoothstep(size-.1,size,distance(uv,mosaic+.5/tileCount)*tileCount);
+    float size = min(max(smoothstep(.45,.55,pattern(mosaic)),0.),1.)/4.;
+	float alpha = 1.-smoothstep(size-.01,size,distance(uv,mosaic+.5/tileCount)*tileCount);
     float shade = 1.-step(size,distance(uv,mosaic+.5/tileCount)*tileCount);
     gl_FragColor = vec4(shade*.270588235294*alpha,shade*.796078431373*alpha,shade*.745098039216*alpha, alpha);
 }
