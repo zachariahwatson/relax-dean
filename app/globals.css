@@ -10,16 +10,35 @@
 	--color-foreground: var(--foreground);
 }
 
+@keyframes infalte {
+	25% {
+		transform: scale(1.04);
+	}
+}
+
+@keyframes infalte2 {
+	75% {
+		transform: scale(1.05);
+	}
+}
+
 body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: "Courier New", Courier, monospace;
 }
 
+.pulse {
+	animation: infalte 1.5s infinite;
+}
+
+.pulse2 {
+	animation: infalte2 1.5s infinite;
+}
+
 /* HTML: <div class="stamp"></div> */
 .stamp {
 	--r: 10px; /* control the radius */
-	padding: var(--r);
 	mask: radial-gradient(50% 50%, #0000 66%, #000 67%) round var(--r) var(--r) / calc(2 * var(--r)) calc(2 * var(--r)),
 		conic-gradient(#000 0 0) content-box;
 }
