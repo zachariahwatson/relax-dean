@@ -1,5 +1,4 @@
 import { Canvas, useFrame } from "@react-three/fiber"
-import { ShaderMaterial, PlaneGeometry, Mesh } from "three"
 import * as THREE from "three"
 import { useRef } from "react"
 
@@ -80,7 +79,7 @@ void main()
 `
 
 const ShaderBackground = () => {
-	const shaderMaterial = useRef<any>(null)
+	const shaderMaterial = useRef<THREE.ShaderMaterial>(null)
 
 	useFrame(({ clock, size }) => {
 		if (shaderMaterial.current) {
