@@ -1,60 +1,21 @@
 import { Canvas, useFrame } from "@react-three/fiber"
 import { ShaderMaterial, PlaneGeometry, Mesh } from "three"
+import * as THREE from "three"
 import { useRef } from "react"
 
 // GLSL shader code
 const vertexShader = `
+  varying vec2 vUv;
   void main() {
+    vUv = uv;
     gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
   }
 `
 
 const fragmentShader = `
   uniform float iTime;
-  void main() {
-    vec3 color = vec3(sin(iTime), cos(iTime), abs(sin(iTime + cos(iTime))));
-    gl_FragColor = vec4(color, 1.0);
-  }
-
-  float colormap_red(float x) {
-    if (x < 0.0) {
-        return 54.0 / 255.0;
-    } else if (x < 20049.0 / 82979.0) {
-        return (829.79 * x + 54.51) / 255.0;
-    } else {
-        return 1.0;
-    }
-}
-
-float colormap_green(float x) {
-    if (x < 20049.0 / 82979.0) {
-        return 0.0;
-    } else if (x < 327013.0 / 810990.0) {
-        return (8546482679670.0 / 10875673217.0 * x - 2064961390770.0 / 10875673217.0) / 255.0;
-    } else if (x <= 1.0) {
-        return (103806720.0 / 483977.0 * x + 19607415.0 / 483977.0) / 255.0;
-    } else {
-        return 1.0;
-    }
-}
-
-float colormap_blue(float x) {
-    if (x < 0.0) {
-        return 54.0 / 255.0;
-    } else if (x < 7249.0 / 82979.0) {
-        return (829.79 * x + 54.51) / 255.0;
-    } else if (x < 20049.0 / 82979.0) {
-        return 127.0 / 255.0;
-    } else if (x < 327013.0 / 810990.0) {
-        return (792.02249341361393720147485376583 * x - 64.364790735602331034989206222672) / 255.0;
-    } else {
-        return 1.0;
-    }
-}
-
-vec4 colormap(float x) {
-    return vec4(colormap_red(x), colormap_green(x), colormap_blue(x), 1.0);
-}
+  uniform vec3 iResolution;
+  varying vec2 vUv;
 
 // https://iquilezles.org/articles/warp
 /*float noise( in vec2 x )
@@ -106,20 +67,25 @@ float pattern( in vec2 p )
 	return fbm( p + fbm( p + fbm( p ) ) );
 }
 
-void mainImage( out vec4 fragColor, in vec2 fragCoord )
+void main()
 {
-    vec2 uv = fragCoord/iResolution.x;
-	float shade = pattern(uv);
-    fragColor = vec4(colormap(shade).rgb, shade);
+    float tileCount = 35.;
+    vec2 uv = vUv*iResolution.xy/500.;
+    vec2 mosaic = floor(uv*tileCount)/tileCount;
+    float size = min(max(smoothstep(.45,.5,pattern(mosaic)),0.),1.)/3.;
+	float alpha = 1.-smoothstep(size-.1,size,distance(uv,mosaic+.5/tileCount)*tileCount);
+    float shade = 1.-step(size,distance(uv,mosaic+.5/tileCount)*tileCount);
+    gl_FragColor = vec4(shade*.270588235294*alpha,shade*.796078431373*alpha,shade*.745098039216*alpha, alpha);
 }
 `
 
 const ShaderBackground = () => {
 	const shaderMaterial = useRef<any>(null)
 
-	useFrame(({ clock }) => {
+	useFrame(({ clock, size }) => {
 		if (shaderMaterial.current) {
 			shaderMaterial.current.uniforms.iTime.value = clock.getElapsedTime()
+			shaderMaterial.current.uniforms.iResolution.value = new THREE.Vector3(size.width, size.height, 1)
 		}
 	})
 
@@ -132,6 +98,7 @@ const ShaderBackground = () => {
 				fragmentShader={fragmentShader}
 				uniforms={{
 					iTime: { value: 0 },
+					iResolution: { value: new THREE.Vector3() },
 				}}
 			/>
 		</mesh>
