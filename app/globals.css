@@ -48,3 +48,8 @@ body {
 	-webkit-mask: var(--mask);
 	mask: var(--mask);
 }
+
+.scrollbar {
+	scrollbar-width: thin;
+	scrollbar-color: #f0ead6 #42c9b9;
+}
