@@ -62,16 +62,6 @@ export default function Home() {
 								time={"8:00 pm"}
 							/>
 							<Show
-								venueName={"me mum's house"}
-								city={"kansas city"}
-								state={"mo"}
-								dayName={"fri"}
-								month={"may"}
-								day={32}
-								time={"1:00 pm"}
-								link={"https://www.youtube.com/watch?v=jgdrL0Bl_YY"}
-							/>
-							<Show
 								venueName={"salty spitoon"}
 								city={"bikini bottom"}
 								state={"bikini atoll"}
@@ -79,6 +69,7 @@ export default function Home() {
 								month={"may"}
 								day={37}
 								time={"11:00 pm"}
+								link={"https://www.youtube.com/watch?v=jgdrL0Bl_YY"}
 								last
 							/>
 						</Shows>
