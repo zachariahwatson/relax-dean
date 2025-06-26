@@ -37,7 +37,7 @@ export default function Home() {
 						<FontAwesomeIcon icon={faYoutube} color="#FFC445" size="2x" />
 					</Link>
 
-					<Link href="https://www.instagram.com/yorelaxdean" target="_blank">
+					<Link href="https://www.instagram.com/relaxdeanmusic" target="_blank">
 						<FontAwesomeIcon icon={faInstagram} color="#FFC445" size="2x" />
 					</Link>
 
@@ -52,15 +52,6 @@ export default function Home() {
 				<div className="px-1 w-full">
 					<div className="stamp bg-[#42C9B9] text-2xl text-[#F0EAD6] p-3 w-full">
 						<Shows>
-							<Show
-								venueName={"society"}
-								city={"kansas city"}
-								state={"mo"}
-								dayName={"sat"}
-								month={"may"}
-								day={24}
-								time={"8:00 pm"}
-							/>
 							<Show
 								venueName={"salty spitoon"}
 								city={"bikini bottom"}
