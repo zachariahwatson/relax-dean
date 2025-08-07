@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-	--background: #f0ead6;
+	--background: #ece6d2;
 	--foreground: #000000;
 }
 
@@ -51,5 +51,5 @@ body {
 
 .scrollbar {
 	scrollbar-width: thin;
-	scrollbar-color: #f0ead6 #42c9b9;
+	scrollbar-color: #ece6d2 #449e91;
 }

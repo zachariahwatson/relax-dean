@@ -17,7 +17,7 @@ export default function Show({ venueName, city, state, dayName, month, day, time
 			<div className="flex justify-between text-xl font-bold">
 				<div>{`${dayName}, ${month} ${day}`}</div>
 				{link && (
-					<div className="bg-[#FFC74A] px-1 font-normal rounded-sm text-md pulse2">
+					<div className="bg-[#FFB427] px-1 font-normal rounded-sm text-md pulse2">
 						<Link href={link} target="_blank">
 							tickets
 						</Link>
