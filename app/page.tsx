@@ -53,6 +53,26 @@ export default function Home() {
 					<div className="stamp bg-[#449E91] text-2xl text-[#ECE6D2] p-3 w-full">
 						<Shows>
 							<Show
+								venueName={"the rino"}
+								city={"kansas city"}
+								state={"missouri"}
+								dayName={"fri"}
+								month={"sept"}
+								day={12}
+								time={"7:00 pm"}
+							/>
+							<Show
+								venueName={"the rino"}
+								city={"kansas city"}
+								state={"missouri"}
+								dayName={"fri"}
+								month={"sept"}
+								day={19}
+								time={"7:00 pm"}
+								link={"https://www.therinokc.com/store/strange-relic-mating-calls-relax-dean-the-chameleons"}
+								last
+							/>
+							{/* <Show
 								venueName={"salty spitoon"}
 								city={"bikini bottom"}
 								state={"bikini atoll"}
@@ -62,7 +82,7 @@ export default function Home() {
 								time={"11:00 pm"}
 								link={"https://www.youtube.com/watch?v=jgdrL0Bl_YY"}
 								last
-							/>
+							/> */}
 						</Shows>
 					</div>
 				</div>
