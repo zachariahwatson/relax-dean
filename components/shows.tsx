@@ -9,7 +9,7 @@ export default function Shows({ children }: { children?: ReactNode }) {
 			) : (
 				<div className="h-60 text-md text-center">no shows :(</div>
 			)}
-			<div className="absolute w-[calc(100%-8px)] h-[240px] top-10 left-1 rounded-xl shadow-[inset_0_-2px_8px_#007E97] pointer-events-none" />
+			<div className="absolute w-[calc(100%-8px)] h-[240px] top-10 left-1 rounded-xl shadow-[inset_0_-2px_8px_#2f707c] pointer-events-none" />
 		</div>
 	)
 }
