@@ -71,7 +71,7 @@ void main()
     float tileCount = 50.;
     vec2 uv = vUv*iResolution.xy/500.;
     vec2 mosaic = floor(uv*tileCount)/tileCount;
-    float size = min(max(smoothstep(.45,.55,pattern(mosaic)),0.),1.)/4.;
+    float size = min(max(smoothstep(.45,.55,pattern(mosaic)),0.),1.)/5.;
 	float alpha = 1.-smoothstep(size-.01,size,distance(uv,mosaic+.5/tileCount)*tileCount);
     float shade = 1.-step(size,distance(uv,mosaic+.5/tileCount)*tileCount);
     gl_FragColor = vec4(shade*.266666666667*alpha,shade*.619607843137*alpha,shade*.56862745098*alpha, alpha);
