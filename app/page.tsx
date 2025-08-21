@@ -60,6 +60,9 @@ export default function Home() {
 								month={"sept"}
 								day={12}
 								time={"7:00 pm"}
+								link={
+									"https://www.therinokc.com/events/2025/9/12/relax-dean-captain-calling-release-party-feat-sos-amp-monster-planet"
+								}
 							/>
 							<Show
 								venueName={"the rino"}
