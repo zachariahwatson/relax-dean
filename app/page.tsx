@@ -31,7 +31,9 @@ export default function Home() {
 						<FontAwesomeIcon icon={faBandcamp} color="#FFB427" size="2x" />
 					</Link>
 
-					<FontAwesomeIcon icon={faSpotify} color="#FFB427" size="2x" />
+					<Link href="https://open.spotify.com/artist/0F3ZPvm6QuYgoGRYhkQCJw" target="_blank">
+						<FontAwesomeIcon icon={faSpotify} color="#FFB427" size="2x" />
+					</Link>
 
 					<Link href="https://www.youtube.com/@relaxdean" target="_blank">
 						<FontAwesomeIcon icon={faYoutube} color="#FFB427" size="2x" />
