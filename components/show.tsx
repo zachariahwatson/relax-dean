@@ -1,6 +1,7 @@
 import Link from "next/link"
 
 interface Props {
+	message?: string
 	venueName: string
 	city: string
 	state: string
@@ -11,9 +12,21 @@ interface Props {
 	link?: string
 	last?: boolean
 }
-export default function Show({ venueName, city, state, dayName, month, day, time, link, last = false }: Props) {
+export default function Show({
+	message,
+	venueName,
+	city,
+	state,
+	dayName,
+	month,
+	day,
+	time,
+	link,
+	last = false,
+}: Props) {
 	return (
 		<div>
+			{message && <div className="font-bold italic pb-1 pulse">{`${message}`}</div>}
 			<div className="flex justify-between text-xl font-bold">
 				<div>{`${dayName}, ${month} ${day}`}</div>
 				{link && (

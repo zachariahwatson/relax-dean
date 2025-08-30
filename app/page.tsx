@@ -84,6 +84,7 @@ export default function Home() {
 					<div className="stamp bg-[#449E91] text-2xl text-[#ECE6D2] p-3 w-full">
 						<Shows>
 							<Show
+								message="*release party!*"
 								venueName={"the rino"}
 								city={"kansas city"}
 								state={"missouri"}
