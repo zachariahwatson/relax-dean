@@ -66,7 +66,7 @@ export default function Home() {
 				<div className="px-1.5">
 					<iframe
 						className="w-full aspect-4/3 margin-0 rounded-xl border-0"
-						src="https://www.youtube.com/embed/zXUncs1UoTk?si=hEIo2K1k8k3BQpju?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&autoplay=1"
+						src="https://www.youtube.com/embed/zXUncs1UoTk?si=hEIo2K1k8k3BQpju?rel=0&modestbranding=1&autohide=1&mute=1&showinfo=0&autoplay=1&loop=1"
 						title="YouTube video player"
 						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 						referrerPolicy="strict-origin-when-cross-origin"
